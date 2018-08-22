@@ -1,0 +1,35 @@
+{
+  "name": "nodejsmicro",
+  "version": "1.0.0",
+  "description": "Sample hello world node js microservices",
+  "author": "vilvamani.arumugam",
+  "private": true,
+  "license": "ISC",
+  "main": "lib/index.js",
+  "scripts": {
+    "check-security": "nsp check",
+    "check-deps": "npm-check",
+    "check-update": "npm-check -u",
+	"unit": "mocha \"./test/unit/**/*.test.js\" -b -R spec --timeout 100000",
+	"lint": "jshint . --verbose && jscs . --recursive",
+	"coverage-unit": "istanbul cover --dir ./coverage/unit _mocha -- -u exports -R spec \"./test/unit/**/*.test.js\" --recursive --timeout 100000"
+  },
+  "dependencies": {
+    "newman": "^3.9.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jscs": "^3.0.7",
+    "jshint": "^2.9.5",
+    "mocha": "^3.5.3",
+    "npm-check": "^5.5.2",
+    "sinon": "^1.17.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vilvamani/nodejs-example.git"
+  },
+  "engine": {
+    "node": "~6.10"
+  }
+}
